@@ -1,6 +1,29 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block mainblock %}
+
+<style>
+    /* Default button styles */
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+     /* Media query for smaller screens */
+     @media screen and (max-width: 600px) {
+    .button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+
 <section class="section main-banner" id="top" data-section="section1">
     <div class="container-bg">
 
@@ -9,11 +32,11 @@
                 <h6>Paste Your Video url Here</h6>
                 <h2 class="text-danger"><em>You</em> Tube</h2>
 
-                <div class="content container-fluid">
+                <div class="content">
                     <form method="post">
                         {% csrf_token %}
                         <input type="text" name="mainurl" placeholder="Paste your video urt here ...!" required>
-                        <button type="Submit" class="btn btn-info">Download</button>
+                        <button  class="button" type="Submit">Download</button>
                     </form><br>
                 </div>
                 <br>
