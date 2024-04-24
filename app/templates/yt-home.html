@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block mainblock %}
+<section class="section main-banner" id="top" data-section="section1">
+    <div class="container-bg">
+
+        <div class="video-overlay header-text">
+            <div class="caption p-5">
+                <h6>Paste Your Video url Here</h6>
+                <h2 class="text-danger"><em>You</em> Tube</h2>
+
+                <div class="content container-fluid">
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="text" name="mainurl" placeholder="Paste your video urt here ...!" required>
+                        <button type="Submit" class="btn btn-info">Download</button>
+                    </form><br>
+                </div>
+                <br>
+
+
+
+                    {% if videos %}
+                    
+                    <img src="{{ thumbnail_url }}" alt="{{ video.title }}" style="max-width: 200px;"><br>
+                    <div class=" text-white">{{title}}</div><br><br>
+
+
+                    <table class="table table-dark mt-2">
+                        <thead>
+                          <tr>
+                            <th scope="col">Resolution</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Link</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                    <!-- <ul> -->
+                        {% for video in videos %}
+                        
+                        <!-- <li>
+                            Resolution: {{ video.resolution }}, Size: {{ video.size_in_mb }} MB
+                            <a href="{{ video.download_link }}" download>Download</a>
+                        </li> -->
+
+                        <tr class="p-5">
+                            <td>{{ video.resolution }}</td>
+                            <td>{{ video.size_in_mb }} MB</td>
+                            <td class="bg-danger"><a href="{{ video.download_link }}" download>Download</a></td>
+                          </tr>
+
+                    
+                        {% endfor %}
+                    <!-- </ul> -->
+                </tbody>
+            </table>
+            <!-- {% for video in videos %}
+            <img src="{{ video.thumbnail_url }}" alt="{{ video.title }}" style="max-width: 200px;">
+            {% endfor %} -->
+            
+                    {% endif %}
+
+
+
+
+
+
+                
+                <br><br><br>
+
+                <!-- <div class="container">
+                    {% for i in videos %}
+                    {{i.title}}
+                    {% endfor %}
+                </div> -->
+                <div><b><h6 class="text-dangery">
+                    <h7>"सर्वेभ्यः सर्वभावेभ्यः सर्वात्मना नमः ।"</h7><br>
+                    <h7 class="mt-5">"सभी से, सभी भावों से, अपनी आत्मा से नमन करता हूँ ||"</h7><br> <br>
+                    "I bow to all, in all states of being, and to my own soul."
+
+                </h6></b></div>
+            </div>
+
+        </div>
+</section>
+</div>
+
+{% endblock %}

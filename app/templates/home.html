@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+  {% block mainblock %}
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="{% static 'images/course-video.mp4' %}" type="video/mp4" />
+      </video>
+
+      <div class="video-overlay header-text">
+          <div class="caption">
+              <h6>Choose Your Platform Here</h6>
+              <h2><em>Virtual</em> World</h2>
+              <div class="main-button">
+                  <div class="scroll-to-section"><a href="{% url 'ythome' %}">You-tube</a></div>
+              </div><br>
+              <div class="main-button">
+                <div class="scroll-to-section"><a href="">Instagram</a></div>
+            </div> <br><br><br>
+            <!-- <div><b><h6 class="text-dangery">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।
+                मा कर्मफलहेतुर्भुर्मा ते संगोऽस्त्वकर्मणि ॥</h6></b></div> -->
+
+                <div><b><h6 class="text-dangery">
+                    <h7>"सर्वेभ्यः सर्वभावेभ्यः सर्वात्मना नमः ।"</h7><br>
+                    <h7 class="mt-5">"सभी से, सभी भावों से, अपनी आत्मा से नमन करता हूँ ||"</h7><br> <br>
+                    "I bow to all, in all states of being, and to my own soul."
+
+                </h6></b></div>
+          </div>
+         
+      </div>
+
+
+      
+      
+  </section>
+
+  <!-- ***** Main Banner Area End ***** -->
+
+{% endblock %}
+
+<!-- footer -->
